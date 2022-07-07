@@ -9,13 +9,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 def post_list(request):
     return render(request, 'Form/post_list.html', {})
 
-def home_view(request):
+def demande_view(request):
     form = 0
     if request.method == 'POST':
         form = TaskFormulaire(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            return HttpResponseRedirect('/')
     context = {}
     context['form'] = TaskFormulaire()
-    return render(request, "Form/home.html", context)
+    return render(request, "Form/demande.html", context)
 

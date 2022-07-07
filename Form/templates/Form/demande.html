@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static%}
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Demande de formulaire</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+</head>
+
+<body style="background-color:#6e9df5;">
+
+
+    <div class="testbox">
+
+
+         <form id="formulaire_test" method="post" action="">
+             <div class="banner">
+                 <h1> Demande de VM </h1>
+            </div>
+
+            {% csrf_token %}
+             {{ form }}
+            <!--{{form.nom_demandeur}}
+             {{form.prenom_demandeur}}
+             {{form.mail}}
+             {{form.nom_de_la_machine}}
+             {{form.url}}
+             {{form.version_OS}}
+             {{form.vpn}}
+             {{form.ports_TCP_Ext}}
+             {{form.ports_UDP_Ext}}
+             {{form.nombre_de_coeurs}}
+             {{form.ram}}
+             {{form.alloc_HDD}}
+             {{form.alloc_SSD}}
+             {{form.autre}}
+             {{form.utilisation}}
+             {{form.date_début}}
+             {{form.date_fin}}-->
+
+
+
+             <div style="text-align: center;"><button type="submit">Envoyer</button></div>
+             <input type="date">
+
+         </form>
+    </div>
+</body>
+
+</html>
