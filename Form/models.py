@@ -25,11 +25,10 @@ class Formulaire(models.Model):
     autre =  models.CharField(max_length=100)
     utilisation =  models.CharField(max_length=100, null=True, blank=True)
 
-    date_debut2 = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
-
     date_début = models.DateField(default=timezone.now)
     date_fin = models.DateField(default=timezone.now)
     date_destruction = models.DateField(default=timezone.now)
+
 
     etat = models.CharField(max_length=40,default = 0 , choices = (('En fonctionnement', 'En fonctionnement'),('En arrêt','En arrêt'),('Détruite','Détruite'),('A créer','A créer')) )
     date_de_demande = models.DateField(default=timezone.now)
