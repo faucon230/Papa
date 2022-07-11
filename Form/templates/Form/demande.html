@@ -14,39 +14,28 @@
 
 
     <div class="testbox">
-
-
          <form id="formulaire_test" method="post" action="">
+             {% csrf_token %}
              <div class="banner">
                  <h1> Demande de VM </h1>
             </div>
+             <br/>
+             <p>
+                 <center>Merci de remplir le formulaire ci dessous afin d'envoyer votre demande de MV
+                </center>
+            </p>
+             <br/>
 
-            {% csrf_token %}
-             {{ form }}
-            <!--{{form.nom_demandeur}}
-             {{form.prenom_demandeur}}
-             {{form.mail}}
-             {{form.nom_de_la_machine}}
-             {{form.url}}
-             {{form.version_OS}}
-             {{form.vpn}}
-             {{form.ports_TCP_Ext}}
-             {{form.ports_UDP_Ext}}
-             {{form.nombre_de_coeurs}}
-             {{form.ram}}
-             {{form.alloc_HDD}}
-             {{form.alloc_SSD}}
-             {{form.autre}}
-             {{form.utilisation}}
-             {{form.date_début}}
-             {{form.date_fin}}-->
+             {{ form. }}
 
 
 
              <div style="text-align: center;"><button type="submit">Envoyer</button></div>
 
          </form>
+
     </div>
+
 </body>
 
 </html>

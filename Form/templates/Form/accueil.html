@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="shortcut icon" type="image/png" href="{% static 'logoEnsea.png' %}"/>
+        <title> Free VM </title>
+    </head>
+</html>
+
+<html>
+<body style="background-color:lightgray;">
+
+
+    <style>
+        .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+        button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background:  #c40452;
+      font-size: 16px;
+      color: #FFFFFF;
+      cursor: pointer;
+      }
+      button:hover {
+      background:  #c83f76;
+      }
+
+
+
+
+
+    </style>
+    <p><div style="text-align: center"><img src="{% static '/image/../../static/Form/image/logoEnsea.png' %}"></div></p>
+    <div class="btn-block">
+        <button type="demande" href="/" onclick="window.location.href = 'http://127.0.0.1:8000/demande';">Faire une demande de VM</button>
+        </div>
+    <div class="btn-block">
+        <button type="monitoring" href="/" onclick="window.location.href = 'http://127.0.0.1:8000/mon';"> Monitoring </button>
+        </div>
+
+
+
+    <!--<div class="btn-block">
+        <button type="admin" href="/" onclick="window.location.href = 'http://127.0.0.1:8000/admin';"> Admin </button>
+        </div>-->
+
+
+
+
+</body>
+</html>

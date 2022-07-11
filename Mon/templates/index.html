@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demande de formulaire</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-diveme.min.css">
+    <link rel="stylesheet" href="{% static 'Mon/css/index.css' %}">
+    <script src="{% static 'Mon/javascript/index.js' %}"></script>
+</head>
+
+
+
+<body style="background-color: white" >
+
+<h1>Gestion</h1>
+
+<div class="container">
+        <div class="table">
+            <div class="table-header">
+                <div class="header__item"><a id="Id" class="filter__link filter__link--number" href="#">Id </a></div>
+                <div class="header__item"><a id="url" class="filter__link" href="#">Url</a></div>
+                <div class="header__item"><a id="nm" class="filter__link" href="#">Nom machine</a></div>
+                <div class="header__item"><a id="statut" class="filter__link" href="#">Statut</a></div>
+                <div class="header__item"><a id="nc" class="filter__link filter__link--number" href="#">Nombre de coeurs</a></div>
+                <div class="header__item"><a id="ram" class="filter__link filter__link--number" href="#">Ram</a></div>
+                <div class="header__item"><a id="ssd" class="filter__link filter__link--number" href="#">Espace SSD</a></div>
+                <div class="header__item"><a id="hdd" class="filter__link filter__link--number" href="#">Espace HDD</a></div>
+                <div class="header__item"><a id="tcp" class="filter__link filter__link--number" href="#">Ports TCP</a></div>
+                <div class="header__item"><a id="udp" class="filter__link filter__link--number" href="#">Ports UDP</a></div>
+                <div class="header__item"><a id="vpn" class="filter__link" href="#">VPN</a></div>
+                <div class="header__item"><a id="ddeb" class="filter__link" href="#">Date de début</a></div>
+                <div class="header__item"><a id="df" class="filter__link" href="#">Date de fin</a></div>
+                <div class="header__item"><a id="ddes" class="filter__link" href="#">Date de destruction</a></div>
+                <div class="header__item"><a id="os" class="filter__link" href="#">OS</a></div>
+                <div class="header__item"><a id="nom_de_famille" class="filter__link" href="#">Nom demandeur</a></div>
+                <div class="header__item"><a id="mail" class="filter__link" href="#">Mail</a></div>
+            </div>
+
+            <div class="table-content">
+                {% for obj in object_list %}
+                    <div class="table-row">
+                        <div class="table-data">{{obj.id}}</div>
+                        <div class="table-data">{{obj.url}}</div>
+
+
+                        <div class="table-data">{{obj.nom_de_la_machine}}<br/></div>
+                        <div class="table-data">{{obj.etat}}</div>
+
+
+
+
+
+                        <div class="table-data">{{obj.nombre_de_coeurs}}</div>
+                        <div class="table-data">{{obj.ram}}</div>
+                        <div class="table-data">{{obj.alloc_SSD}}</div>
+                        <div class="table-data">{{obj.alloc_HDD}}</div>
+
+                        <div class="table-data">{{obj.ports_TCP_Ext}}</div>
+                        <div class="table-data">{{obj.ports_UDP_Ext}}</div>
+                        <div class="table-data">{{obj.vpn}}</div>
+                        <div class="table-data">{{obj.date_début}}</div>
+                        <div class="table-data">{{obj.date_fin}}</div>
+                         {% if obj.etat == 'Détruite' %}
+                             <div class="table-data">{{obj.date_destruction}}</div>
+                         {% endif %}
+                         {% if obj.etat != 'Détruite' %}
+                             <div class="table-data">X</div>
+                         {% endif %}
+                        <div class="table-data">{{obj.version_OS}}</div>
+                        <div class="table-data">{{obj.prenom_demandeur}} {{obj.nom_demandeur}}<br/> </div>
+                        <div class="table-data">{{obj.mail}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+
+
+
+</body>
+</html>

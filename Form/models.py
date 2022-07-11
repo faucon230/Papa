@@ -5,9 +5,9 @@ from django import forms
 
 
 class Formulaire(models.Model):
-    nom_demandeur = models.CharField(max_length=20,default='nom')
-    prenom_demandeur = models.CharField(max_length=20,default='prénom')
-    mail = models.CharField(max_length=40,default='exemple@mail.com')
+    nom_demandeur = models.CharField(max_length=30,default='nom')
+    prenom_demandeur = models.CharField(max_length=30,default='prénom')
+    mail = models.CharField(max_length=100,default='exemple@mail.com')
 
     nom_de_la_machine = models.CharField(max_length=20)
     url = models.CharField(max_length=20,default = 'sandbox.ensea.fr')
@@ -22,16 +22,16 @@ class Formulaire(models.Model):
     alloc_HDD = models.CharField(max_length=10)
     alloc_SSD = models.CharField(max_length=10)
 
-    autre =  models.CharField(max_length=100)
-    utilisation =  models.CharField(max_length=100, null=True, blank=True)
+    autre =  models.CharField(max_length=100, null=True, blank=True)
+    utilisation =  models.CharField(max_length=100,null=True, blank=True)
 
     date_début = models.DateField(default=timezone.now)
     date_fin = models.DateField(default=timezone.now)
     date_destruction = models.DateField(default=timezone.now)
 
 
-    etat = models.CharField(max_length=40,default = 0 , choices = (('En fonctionnement', 'En fonctionnement'),('En arrêt','En arrêt'),('Détruite','Détruite'),('A créer','A créer')) )
-    date_de_demande = models.DateField(default=timezone.now)
+    etat = models.CharField(max_length=40,default = 'A créer' , choices = (('En fonctionnement', 'En fonctionnement'),('En arrêt','En arrêt'),('Détruite','Détruite'),('A créer','A créer')) )
+
 
 
 
